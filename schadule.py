@@ -8,12 +8,11 @@ import pytz
 
 #Semester Begin and Ends Dates in [y,m,d] format
 #Enter the day before the semester starts 
-semA_begin = [2022,10,22]
-semA_end = [2023,1,22]
+sem_begin = [2022,10,22]
+sem_end = [2023,1,22]
 
-semB_begin=[2023,3,8]
-semB_end=[2023,6,23]
-
+#Enter path to xlsx file
+braude_path=r"C:\Users\Dvir\Downloads\YedionXlsFile_07691_01398.xlsx"
 
 #Get day For Reaccurance format
 def getDay(char):
@@ -31,7 +30,6 @@ def getDay(char):
         return "FR"
 
 #initiating Data Frame
-braude_path=r"C:\Users\Dvir\Downloads\YedionXlsFile_05200_01982.xlsx"
 braude_df=pd.read_excel(braude_path,skiprows=[0])
 
 #Creating ical file
@@ -71,13 +69,13 @@ for i in braude_df.index:
     
     #Creating events for each course in ICal File 
     ev = Event()
-    until_date = datetime(semA_end[0], semA_end[1], semA_end[2], tzinfo=pytz.timezone("Israel"))
     ev.add('summary',subject_line)
-    ev.add('dtstart', datetime(semA_begin[0], semA_begin[1], semA_begin[2], int(start[0:2]), int(start[3:6]), 0, tzinfo=pytz.timezone("Israel")))
-    ev.add('dtend', datetime(semA_begin[0], semA_begin[1], semA_begin[2], int(end[0:2]), int(end[3:6]), 0, tzinfo=pytz.timezone("Israel")))
-    ev.add('dtstamp',datetime(semA_begin[0], semA_begin[1], semA_begin[2], int(start[0:2]), int(start[3:6]), 0, tzinfo=pytz.timezone("Israel")))
+    ev.add('dtstart', datetime(sem_begin[0], sem_begin[1], sem_begin[2], int(start[0:2]), int(start[3:6]), 0, tzinfo=pytz.timezone("Israel")))
+    ev.add('dtend', datetime(sem_begin[0], sem_begin[1], sem_begin[2], int(end[0:2]), int(end[3:6]), 0, tzinfo=pytz.timezone("Israel")))
+    ev.add('dtstamp',datetime(sem_begin[0], sem_begin[1], sem_begin[2], int(start[0:2]), int(start[3:6]), 0, tzinfo=pytz.timezone("Israel")))
     ev.add('description',lect)
-    ev.add('location',room)  
+    ev.add('location',room)
+    until_date = datetime(sem_end[0], sem_end[1], sem_end[2], tzinfo=pytz.timezone("Israel")) 
     ev.add('rrule',{'freq':'weekly','interval':1,'byday':getDay(day),'until':until_date})
     cal.add_component(ev)
 
