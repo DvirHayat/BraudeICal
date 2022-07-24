@@ -15,6 +15,7 @@ After that, your Excel spreadsheet should be in the correct format provided by t
 
 
 1)Enter the dates in the list in which the semesters are starting and ending.
+
 2)Change the file path to your Excel spreadsheet file.
 
 The script will make the Ical file in local repository under:"My Calander"
