@@ -12,6 +12,7 @@ In order to run the script there are 3 Python libraries that are needed to be in
 -pandas
 
 -pytz
+
 These can be installed using the pip installer : "pip install LibName" 
 
 After that, your Excel spreadsheet should be in the correct format provided by the collage website (https://info.braude.ac.il/) , as shown in schadule_format.xlxs
