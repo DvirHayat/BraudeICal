@@ -6,8 +6,11 @@ The only way a schadule is made downlodable from my collage website with days, h
 This script provides more suitable way to make a course schadule through creating an Ical file that includes the courses as repeated events throughout the semester. 
 
 In order to run the script there are 3 Python libraries that are needed to be installed:
+
 -icalander
+
 -pandas
+
 -pytz
 These can be installed using the pip installer : "pip install LibName" 
 
