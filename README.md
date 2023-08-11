@@ -15,7 +15,7 @@ In order to run the script there are 3 Python libraries that are needed to be in
 
 These can be installed using the pip installer : "pip install LibName" 
 
-After that, your Excel spreadsheet should be in the correct format provided by the collage website (https://info.braude.ac.il/) , as shown in schadule_format.xlxs
+After that, your Excel spreadsheet should be in the correct format provided by the college website (https://info.braude.ac.il/) , as shown in schadule_format.xlxs
 
 
 1)Enter the dates in the list in which the semesters are starting and ending.
